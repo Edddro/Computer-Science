@@ -2,10 +2,10 @@
 Author: Edward Drobnis
 Date: March 21, 2024
 Title: Spending
-Description: Calculates the percentages of items based on the total items purchased
+Description: Calculates the percentages of money spent on different items
 '''
 
-print("Enter the amount spent last month on the following items:")
+print("Enter the amount spent last month on the following items:\n")
 food = float(input("Food: $"))
 clothing = float(input("Clothing: $"))
 entertainment = float(input("Entertainment: $"))

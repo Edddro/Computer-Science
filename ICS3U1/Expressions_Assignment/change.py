@@ -2,7 +2,7 @@
 Author: Edward Drobnis
 Date: March 19, 2024
 Title: Coin Change
-Description: Calculates the minimum number of coins necessary to make q change.
+Description: Calculates the minimum number of coins necessary to make a change.
 '''
 
 change = int(input("Enter the change in cents: "))
@@ -15,7 +15,7 @@ nickels = change // 5
 change -= nickels * 5
 pennies = change // 1
 
-print("The minimum number of coins is:")
+print("\nThe minimum number of coins is:")
 print("{:>14} {}".format("Quarters:", quarters))
 print("{:>11} {}".format("Dimes:", dimes))
 print("{:>13} {}".format("Nickels:", nickels))

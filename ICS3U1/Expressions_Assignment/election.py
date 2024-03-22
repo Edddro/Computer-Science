@@ -2,7 +2,7 @@
 Author: Edward Drobnis
 Date: March 22, 2024
 Title: Election
-Description: Calculates the votes for two politicians from three cities
+Description: Calculates the votes for two politicians in three states
 '''
 
 print("Election Results for New York:")
@@ -21,7 +21,7 @@ votes = awbrey + martinez
 awbreyPercent = awbrey / votes * 100
 martinezPercent = martinez / votes * 100
 
-print("\n{:<15}{:<8}{}".format("Candidate", "Votes", "Percent"))
-print("{:<15}{:<8}{:.2f} %".format("Awbrey", awbrey, awbreyPercent))
-print("{:<15}{:<8}{:.2f} %".format("Martinez", martinez, martinezPercent))
-print("{:<14}{}".format("TOTAL VOTES:", votes))
+print("\n{:<15}{:<9}{}".format("Candidate", "Votes", "Percentage"))
+print("{:<15}{:<9}{:.2f} %".format("Awbrey", awbrey, awbreyPercent))
+print("{:<15}{:<9}{:.2f} %".format("Martinez", martinez, martinezPercent))
+print("{:<15}{}".format("TOTAL VOTES:", votes))

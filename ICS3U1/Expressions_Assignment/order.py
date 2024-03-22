@@ -13,7 +13,7 @@ price = (burgers * 1.69) + (fries * 1.09) + (sodas * 0.99)
 tax = price * 0.065
 total = price + tax
 
-print("Total before tax: ${0:.2f}\nTax: ${1:.2f}\nFinal total: ${2:.2f}\n".format(price, tax, total))
+print("Total before tax: ${:.2f}\nTax: ${:.2f}\nFinal total: ${:.2f}\n".format(price, tax, total))
 
 tender = float(input("Enter amount tendered: $"))
 change = tender - total

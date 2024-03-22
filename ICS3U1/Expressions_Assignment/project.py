@@ -1,11 +1,11 @@
 '''
 Author: Edward Drobnis
 Date: March 20, 2024
-Title: Project Percentages
+Title: Project
 Description: Calculates the percentages of time taken for different tasks
 '''
 
-print("Enter the number of minutes spent on each of the following project tasks:")
+print("Enter the number of minutes spent on each of the following project tasks:\n")
 design = float(input("Designing: "))
 code = float(input("Coding: "))
 debug = float(input("Debugging: "))
