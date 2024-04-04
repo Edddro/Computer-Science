@@ -6,8 +6,8 @@ Description: Calculates the power of two numbers
 '''
 import math
 
-x = int(input("Enter a value for X: "))
-y = int(input("Enter a value for Y: "))
+x = float(input("Enter a value for X: "))
+y = float(input("Enter a value for Y: "))
 
 formula = math.e ** (y * math.log(x, math.e))
 power = math.pow(x, y)

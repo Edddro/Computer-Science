@@ -20,4 +20,4 @@ elif discriminant == 0:
 else:
     root1 = (-b + math.sqrt(discriminant)) / (2 * a)
     root2 = (-b - math.sqrt(discriminant)) / (2 * a)
-    print("The roots are {:.1f} and {:.1f}".format(root1, root2))
+    print("The roots are {:.2f} and {:.2f}".format(root1, root2))

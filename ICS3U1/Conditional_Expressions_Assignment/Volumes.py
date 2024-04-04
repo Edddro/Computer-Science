@@ -2,7 +2,7 @@
 Name: Edward Drobnis
 Date: April 2, 2024
 Title: Volumes
-Description: 
+Description: Calculates the volume of a rectangular prism, sphere, and cube
 '''
 import math
 
@@ -13,7 +13,7 @@ height = float(input("Enter the height: "))
 
 volume = length * width * height
 
-print("The volume is: {:.0f}\n".format(volume))
+print("The volume is: {:.3f}\n".format(volume))
 print("Sphere")
 radius = float(input("Enter the radius: "))
 
@@ -25,4 +25,4 @@ length = float(input("Enter the length of each side: "))
 
 volume = length ** 3
 
-print("The volume is: {:.0f}".format(volume))
+print("The volume is: {:.3f}".format(volume))
