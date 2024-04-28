@@ -12,4 +12,4 @@ while number > 0:
     sum += (number % 10) ** 3
     number //= 10
 
-print("The sum of the digits is: {}".format(sum))
+print("The sum of the cubes of the digits is: {}".format(sum))
