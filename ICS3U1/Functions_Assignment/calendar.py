@@ -132,19 +132,26 @@ def calendar(month, century, decade, year):
             print("|")
             divider()
 
-    # Once all the days are printed, the 7 minus (day_count mod 7) is calculated to determine the number of empty boxes it should print
+    # Once all the days are printed, 7 minus (day_count mod 7) is calculated to determine the number of empty boxes it should print
     # For example, if day_count is 31, 7 - (31 % 7) = 4, so 4 empty boxes will be printed
-    for i in range(7 - (day_count % 7)):
-        print("{}{:>3} ".format("|", ""), end = " ")
+    # However, if the day_count is a multiple of 7, no empty boxes need to be printed (meaning that the last day of the month ends on a Saturday)
 
-    # Prints a vertical line, followed by a divider
-    print("|")
-    divider()
+    if day_count % 7 > 0:
+        for i in range(7 - (day_count % 7)):
+            print("{}{:>3} ".format("|", ""), end = " ")
+
+        # Prints a vertical line, followed by a divider
+        print("|")
+        divider()
 
 if __name__ == "__main__":
     # Prompts the user for a month (string) and year (integer) and raises a value error if invalid
     try:
         month = input("Enter the month (uppercase the first letter): ")
+
+        # To check if the month is valid, month_int() is called
+        valid_month = month_int(month, 0)
+
         year = int(input("Enter the year: "))
 
         # Calculates the century by cutting off the last two digits of the year
@@ -156,9 +163,6 @@ if __name__ == "__main__":
         # If the year is negative, a value error is raised
         if year < 0:
             raise ValueError
-
-        # To check if the month is valid, month_int() is called
-        valid_month = month_int(month, year)
 
         # Calls the calendar function if the input is valid
         calendar(month, century, decade, year)
@@ -263,11 +267,12 @@ while day < days + 1
     day = day + 1
 
 day = 0
-while day < (7 - (day_count % 7))
-    print("{}{:>3} ".format("|", ""), end = " ")
-
-print("|")
-divider()
+if day_count mod 7 > 0:
+    while day < (7 - (day_count % 7))
+        print("{}{:>3} ".format("|", ""), end = " ")
+    
+    print("|")
+    divider()
 end calendar
 
 Main Program:
