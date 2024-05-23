@@ -21,7 +21,12 @@ def month_int(month, year):
     # If it is a leap year, it will return 29 days, otherwise it will return 28 days
     elif month == "February":
         month_number = 12
-        if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                days = 29
+            else:
+                days = 28
+        elif year % 4 == 0:
             days = 29
         else:
             days = 28
@@ -186,7 +191,7 @@ if month == "January"
 
 else if month == "February"
     month_number = 12
-    if year mod 4 == 0
+    if year mod 4 == 0 or year mod 100 == 0 and year mod 400 == 0
         days = 29
     else
         days = 28
