@@ -194,3 +194,151 @@ def main():
 while True:
     main()
 
+'''
+Pseudo code:
+
+Functions:
+sort_grades()
+add_grade(grade)
+remove_grade(grade)
+lowest_grade()
+highest_grade()
+show_grades()
+clear_grades()
+main()
+
+grades = list(0 for i in range(10))
+
+function sort_grades():
+    for i in range(len(grades) - 1):
+        for j in range(i + 1, len(grades)):
+            if grades[i] < grades[j]:
+                grades[i], grades[j] = grades[j], grades[i]
+end sort_grades
+
+function add_grade(grade):
+    for i in range(len(grades)):
+        if grades[i] == 0:
+            del grades[i]
+            grades.append(grade)
+            sort_grades()
+            return print("Successfully added {}% to the list\n".format(grade))
+    return print("List is full. Please remove a grade and try again.\n")
+end add_grade
+
+function delete_grade(grade):
+    if max(grades) == 0:
+        return print("No grades were entered. Please enter a grade and try again.\n")
+    for i in range(len(grades)):
+        if grade == grades[i]:
+            del grades[i]
+            grades.append(0)
+            return print("Successfully deleted {}% from the list\n".format(grade))
+    return print("Grade was not found.\n")
+end delete_grade
+
+function lowest_grade():
+    for i in range(-1, -len(grades), -1):
+        if grades[i] != 0:
+            return print("The lowest grade is: {}%\n".format(grades[i]))
+    return print("No grades entered!\n")
+end lowest_grade
+
+function highest_grade():
+    for i in range(len(grades)):
+        if grades[i] != 0:
+            return print("The highest grade is: {}%\n".format(grades[i]))
+    return print("No grades entered!\n")
+end highest_grade
+
+function show_grades():
+    print("-" * ((8 * len(grades)) - (len(grades) - 1)))
+    for i in range(len(grades)):
+        print("|{:>5}".format(i), end=" ")
+    print("|")
+    print("-" * ((8 * len(grades)) - (len(grades) - 1)))
+
+    for i in range(len(grades)):
+        print("|{:>5}".format(grades[i]), end=" ")
+
+    print("|")
+    print("-" * ((8 * len(grades)) - (len(grades) - 1)))
+    return print("\n")
+end show_grades
+
+function clear_grades():
+    if grades[0] == 0:
+        return print("Grades already cleared!\n")
+    else:
+        for i in range(len(grades)):
+            grades[i] = 0
+        return print("Cleared grades!\n")
+end clear_grades
+
+function main():
+    while True:
+        print("Choose from the following menu:")
+        print("0. Enter a grade")
+        print("1. Delete a grade")
+        print("2. Show grades")
+        print("3. Display lowest grade")
+        print("4. Display highest grade")
+        print("5. Clear list")
+        print("6. Quit")
+
+        try:
+            option = int(input("\nEnter option (0-6): "))
+            if option == 0:
+                while True:
+                    try:
+                        grade = int(input("Enter a grade (between 1 and 100): "))
+                        if 0 < grade and grade <= 100:
+                            add_grade(grade)
+                            break
+                        else:
+                            raise ValueError
+                    except ValueError:
+                        print("Grade must be an integer between 1 and 100")
+                        continue
+
+            elif option == 1:
+                while True:
+                    try:
+                        grade = int(input("Enter a grade (between 1 and 100): "))
+                        if 0 < grade and grade <= 100:
+                            delete_grade(grade)
+                            break
+                        else:
+                            raise ValueError
+                    except ValueError:
+                        print("Grade must be an integer between 1 and 100")
+                        continue
+
+            elif option == 2:
+                show_grades()
+
+            elif option == 3:
+                lowest_grade()
+
+            elif option == 4:
+                highest_grade()
+
+            elif option == 5:
+                clear_grades()
+
+            elif option == 6:
+                exit()
+
+            else:
+                print("Invalid option. Choose option 0 to 6.\n")
+                continue
+
+        except ValueError:
+            print("Invalid option. Choose option 0 to 6.\n")
+            continue
+end main
+
+Main Program:
+while True:
+    main()
+'''

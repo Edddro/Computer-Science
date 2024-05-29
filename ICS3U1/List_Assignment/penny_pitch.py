@@ -130,8 +130,15 @@ while True:
 '''
 Pseudo Code:
 
+Functions:
+select_prizes(prizes, squares)
+draw_squares(squares)
+penny_pitch(prizes, squares)
+display_prizes_won(prizes)
+main()
+
 import random
-def select_prizes(prizes, squares):
+function select_prizes(prizes, squares):
     for prize, count in prizes:
         while count > 0:
             row = random.randint(0, 4)
@@ -139,8 +146,9 @@ def select_prizes(prizes, squares):
             if squares[row][col] == "":
                 squares[row][col] = prize
                 count -= 1
+end select_prizes
 
-def draw_squares(squares):
+function draw_squares(squares):
     print()
     for row in squares:
         print("-" * 86)
@@ -149,8 +157,9 @@ def draw_squares(squares):
         print("|")
     print("-" * 86)
     print()
+end draw_squares
 
-def penny_pitch(prizes, squares):
+function penny_pitch(prizes, squares):
     row = random.randint(0, 4)
     col = random.randint(0, 4)
 
@@ -163,8 +172,9 @@ def penny_pitch(prizes, squares):
             prizes[i][1] -= 1
 
     squares[row][col] += "*"
+end penny_pitch
 
-def display_prizes_won(prizes):
+function display_prizes_won(prizes):
     prizes_won = []
     for prize, count in prizes:
         if count == 0:
@@ -179,8 +189,9 @@ def display_prizes_won(prizes):
             print(prizes_won[i], end = "")
             if i != len(prizes_won) - 1:
                 print(",", end = " ")
+end display_prizes_won
 
-def main():
+function main():
     prizes = [["Puzzle", 3], ["Game", 3], ["Ball", 3], ["Poster", 3], ["Doll", 3]]
     squares = [[""] * 5 for _ in range(5)]
     print("New Board")
@@ -196,7 +207,9 @@ def main():
     draw_squares(squares)
 
     display_prizes_won(prizes)
+end main
 
+Main Program:
 run = 0
 while True:
     while run > 0:
