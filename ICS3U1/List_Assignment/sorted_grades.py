@@ -46,7 +46,7 @@ def delete_grade(grade):
     '''
     # Checks if the highest number in grades is 0,
     # If true, it will return "No grades were entered"
-    if max(grades) == 0:
+    if grades[0] == 0:
         return print("No grades were entered. Please enter a grade and try again.\n")
 
     # Otherwise, it will loop through each grade until it finds the user-inputted grade
@@ -128,7 +128,7 @@ def clear_grades():
 def main():
     '''
     Function to display menu
-    :return:
+    :return: None
     '''
     while True:
         print("Choose from the following menu:")
@@ -145,7 +145,7 @@ def main():
             if option == 0:
                 while True:
                     try:
-                        grade = int(input("Enter a grade (between 1 and 100): "))
+                        grade = int(input("Enter a grade between 1 and 100: "))
                         if 0 < grade and grade <= 100:
                             add_grade(grade)
                             break
@@ -158,7 +158,7 @@ def main():
             elif option == 1:
                 while True:
                     try:
-                        grade = int(input("Enter a grade (between 1 and 100): "))
+                        grade = int(input("Enter a grade between 1 and 100: "))
                         if 0 < grade and grade <= 100:
                             delete_grade(grade)
                             break
@@ -227,7 +227,7 @@ function add_grade(grade):
 end add_grade
 
 function delete_grade(grade):
-    if max(grades) == 0:
+    if grades[0] == 0:
         return print("No grades were entered. Please enter a grade and try again.\n")
     for i in range(len(grades)):
         if grade == grades[i]:

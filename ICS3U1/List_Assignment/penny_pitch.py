@@ -111,21 +111,13 @@ def main():
 
     display_prizes_won(prizes)
 
-run = 0
 while True:
-    while run > 0:
-        print()
-        # If the program is run over 1 time, display an option to stop the program or continue to a new game
-        try:
-            r = int(input("Enter \"0\" to stop or any other integer to continue: "))
-            break
-        except ValueError:
-            print("Enter \"0\" to stop or any other integer to continue!")
-    if run == 0 or r != 0:
+    try:
         main()
-        run += 1
-    else:
-        break
+        if input("Press 0 to stop or any other key to continue: ") == "0":
+            break
+    except ValueError:
+        print("Press 0 to stop or any other key to continue: ")
 
 '''
 Pseudo Code:
@@ -210,18 +202,10 @@ function main():
 end main
 
 Main Program:
-run = 0
-while True:
-    while run > 0:
-        print()
-        try:
-            r = int(input("Enter \"0\" to stop or any other integer to continue: "))
-            break
-        except ValueError:
-            print("Enter \"0\" to stop or any other integer to continue!")
-    if run == 0 or r != 0:
+    try:
         main()
-        run += 1
-    else:
-        break
+        if input("Press 0 to stop or any other key to continue: ") == "0":
+            break
+    except ValueError:
+        print("Press 0 to stop or any other key to continue: ")
 '''
